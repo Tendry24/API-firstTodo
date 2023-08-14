@@ -1,0 +1,60 @@
+openapi: '3.0.2'
+
+info:
+  title: OnBoarding API
+  description: Mon STD22076
+  version: '1.0'
+  
+servers:
+  - url: https://STD22076.com
+
+paths:
+  /Students:
+    get:
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Students'
+                      
+        '500':
+          description: Internal server error 
+
+    post:
+      summary: Create new test 
+      requestBody:
+          required: true
+          content:
+            'application/x-www-form-urlencoded':
+              schema:
+                $ref: '#/components/schemas/Students'
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Students'
+          '500':
+            description: Internal server error
+
+components:
+  schemas:
+    Students:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 76
+        name:
+          type: string
+          example: Tendry
+        birthdate:
+          type: string
+          format: date
+          example: 2004-05-26
+        
+
