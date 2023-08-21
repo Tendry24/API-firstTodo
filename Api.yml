@@ -10,7 +10,9 @@ servers:
 
 paths:
   /Students:
-    get:
+   get:
+      tags:
+        - Students
       responses:
         '200':
           description: OK
@@ -23,6 +25,8 @@ paths:
           description: Internal server error 
 
     post:
+      tags:
+        - Students
       summary: Create new test 
       requestBody:
           required: true
