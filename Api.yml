@@ -89,6 +89,39 @@ paths:
         '200':
           description: OK
 
+  /Teachers:       
+    get:
+      tags:
+        - Teachers    
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Teachers'
+        '500':
+          description: Internal server error
+
+    post:
+      tags:
+        - Teachers
+      summary: Create new Teachers
+      requestBody:
+          required: true
+          content:
+            'application/x-www-form-urlencoded':
+              schema:
+                $ref: '#/components/schemas/Students'
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Students'
+          '500':
+            description: Internal server error
 
 components:
   schemas:
