@@ -2,7 +2,7 @@ openapi: '3.0.2'
 
 info:
   title: OnBoarding API
-  description: Mon STD22076
+  description: STD22076
   version: '1.0'
   
 servers:
