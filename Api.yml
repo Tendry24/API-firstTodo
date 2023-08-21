@@ -139,5 +139,34 @@ components:
           type: string
           format: date
           example: 2004-05-26
-        
+
+    Teachers:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Ramarozaka
+        first_name:
+          type: string
+          example: Toky
+        course:
+          items:
+            type: object      
+            properties:
+              course_name:    
+                type: string
+              code:    
+                type: string
+              duration: 
+                type: string
+          example:
+            - course_name: Algorithmique
+              course_code: PROG1
+              course_duration: 3 months
+            - course_name: Interface Design
+              course_code: WEB1
+              course_duration: 2 months
+            - course_name: Persistance de données
+              course_code: Donnée1
+              course_duration: 5 months
 
